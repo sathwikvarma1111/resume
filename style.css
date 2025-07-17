@@ -1,0 +1,139 @@
+:root {
+  --bg-color: #d0fcdc;               /* Light luxe green background */
+  --card-color: #ffffff;             /* Card background white */
+  --text-color: #000000;
+  --accent-color: hsl(123, 76%, 45%); /* Leaf green for border, headings, and buttons */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: var(--card-color);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header {
+  text-align: left;
+  position: relative;
+}
+
+header h1 {
+  color: var(--accent-color); /* Use accent color for name too */
+}
+
+.contact p {
+  margin: 2px 0;
+}
+
+.profile-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color);
+}
+
+section {
+  margin-top: 20px;
+}
+
+h2 {
+  color: var(--accent-color);             /* ✅ All subheadings green */
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* ✅ Dark Mode Toggle Button */
+#toggle-dark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#toggle-dark:hover {
+  opacity: 0.9;
+}
+
+/* ✅ Custom Half-Moon Icon */
+.half-moon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: black;      /* Black half */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.half-moon::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #cddc39;    /* Fresh light green for the other half */
+  border-radius: 50%;
+  left: 50%;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --card-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --accent-color: #215c24; /* Light green for dark mode */
+}
+
+body.dark a {
+  color: #90caf9;
+}
+
+@media (max-width: 600px) {
+  .profile-photo {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+
+  header {
+    text-align: center;
+  }
+}
